@@ -39,15 +39,27 @@ export async function POST(req: Request) {
   const lastMessage = messages[messages.length - 1].content;
 
   const chat = model.startChat({ history });
-  const result = await chat.sendMessageStream(lastMessage);
+
+  let result;
+  try {
+    result = await chat.sendMessageStream(lastMessage);
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return new Response(msg, { status: 500 });
+  }
 
   const encoder = new TextEncoder();
 
   const readable = new ReadableStream({
     async start(controller) {
-      for await (const chunk of result.stream) {
-        const text = chunk.text();
-        if (text) controller.enqueue(encoder.encode(text));
+      try {
+        for await (const chunk of result.stream) {
+          const text = chunk.text();
+          if (text) controller.enqueue(encoder.encode(text));
+        }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        controller.enqueue(encoder.encode(`\n\n[Error: ${msg}]`));
       }
       controller.close();
     },
