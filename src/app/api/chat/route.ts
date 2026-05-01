@@ -1,6 +1,6 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const client = new Anthropic();
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 
 const SYSTEM_PROMPT = `You are an AI assistant for AutomateItAll.ai, a software company that builds fully integrated operations platforms for any business. Your role is to qualify prospects and help them understand what we build.
 
@@ -22,25 +22,28 @@ Keep responses concise — 2-4 sentences unless they ask for detail. Be direct a
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const stream = await client.messages.stream({
-    model: "claude-opus-4-7",
-    max_tokens: 1024,
-    system: SYSTEM_PROMPT,
-    messages,
-    thinking: { type: "adaptive" },
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    systemInstruction: SYSTEM_PROMPT,
   });
+
+  const history = messages.slice(0, -1).map((m: { role: string; content: string }) => ({
+    role: m.role === "assistant" ? "model" : "user",
+    parts: [{ text: m.content }],
+  }));
+
+  const lastMessage = messages[messages.length - 1].content;
+
+  const chat = model.startChat({ history });
+  const result = await chat.sendMessageStream(lastMessage);
 
   const encoder = new TextEncoder();
 
   const readable = new ReadableStream({
     async start(controller) {
-      for await (const chunk of stream) {
-        if (
-          chunk.type === "content_block_delta" &&
-          chunk.delta.type === "text_delta"
-        ) {
-          controller.enqueue(encoder.encode(chunk.delta.text));
-        }
+      for await (const chunk of result.stream) {
+        const text = chunk.text();
+        if (text) controller.enqueue(encoder.encode(text));
       }
       controller.close();
     },
