@@ -1,13 +1,12 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
 export async function GET() {
-  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-  const models = await genAI.listModels();
-  const names: string[] = [];
-  for await (const model of models) {
-    if (model.supportedGenerationMethods?.includes("generateContent")) {
-      names.push(model.name);
-    }
-  }
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GOOGLE_API_KEY}`
+  );
+  const data = await res.json();
+  const names = (data.models ?? [])
+    .filter((m: { supportedGenerationMethods?: string[] }) =>
+      m.supportedGenerationMethods?.includes("generateContent")
+    )
+    .map((m: { name: string }) => m.name);
   return Response.json(names);
 }
