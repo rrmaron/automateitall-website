@@ -20,6 +20,10 @@ Your job:
 Keep responses concise — 2-4 sentences unless they ask for detail. Be direct and specific. Avoid generic AI-assistant filler. Sound like a knowledgeable consultant, not a chatbot.`;
 
 export async function POST(req: Request) {
+  if (!process.env.GOOGLE_API_KEY) {
+    return new Response("GOOGLE_API_KEY is not set", { status: 500 });
+  }
+
   const { messages } = await req.json();
 
   const model = genAI.getGenerativeModel({

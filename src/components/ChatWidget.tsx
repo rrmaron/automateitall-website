@@ -53,7 +53,10 @@ export default function ChatWidget() {
         body: JSON.stringify({ messages: next }),
       });
 
-      if (!res.ok || !res.body) throw new Error("Request failed");
+      if (!res.ok || !res.body) {
+        const text = await res.text();
+        throw new Error(text || "Request failed");
+      }
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -65,13 +68,13 @@ export default function ChatWidget() {
         full += decoder.decode(value, { stream: true });
         setMessages([...next, { role: "assistant", content: full }]);
       }
-    } catch {
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Unknown error";
       setMessages([
         ...next,
         {
           role: "assistant",
-          content:
-            "Sorry, something went wrong. Reach out directly at hello@automateitall.ai.",
+          content: `Error: ${msg}`,
         },
       ]);
     } finally {
