@@ -1,3 +1,5 @@
+import ChatWidget from "@/components/ChatWidget";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#020817] text-slate-100">
@@ -10,6 +12,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
