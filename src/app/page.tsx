@@ -9,6 +9,7 @@ export default function Home() {
         <HowItWorks />
         <CaseStudy />
         <Industries />
+        <FreeTrial />
         <CTA />
       </main>
       <Footer />
@@ -54,6 +55,10 @@ function Hero() {
           Business Process Automation
         </div>
 
+        <div className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 border border-emerald-400/30 rounded-full px-5 py-2 mb-4 bg-emerald-400/5">
+          🛁 Bath remodeling companies — 14-day free trial, no credit card required
+        </div>
+
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
           Automate{" "}
           <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -70,10 +75,10 @@ function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#contact"
-            className="px-8 py-4 rounded-full bg-cyan-500 text-[#020817] font-semibold hover:bg-cyan-400 transition-colors text-lg"
+            href="#free-trial"
+            className="px-8 py-4 rounded-full bg-emerald-500 text-white font-semibold hover:bg-emerald-400 transition-colors text-lg"
           >
-            Start automating →
+            Start free trial →
           </a>
           <a
             href="#case-study"
@@ -261,6 +266,68 @@ function Industries() {
   );
 }
 
+/* ─── Free Trial ─────────────────────────────────────────────────────────── */
+function FreeTrial() {
+  const includes = [
+    "Full access to the bath remodeling operations platform",
+    "Webhook-driven lead ingestion from your CRM",
+    "Automated job creation, assignment & tracking",
+    "Live inventory with reorder alerts",
+    "Installer scheduling & pay sheets",
+    "Commission calculation engine",
+    "Customer-facing quote signing portal",
+    "Onboarding call with our team",
+  ];
+
+  return (
+    <section id="free-trial" className="py-24 px-6 border-t border-white/5">
+      <div className="max-w-4xl mx-auto">
+        <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/5 p-10 sm:p-14 text-center relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-emerald-500/8 blur-3xl" />
+          </div>
+
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-400 border border-emerald-400/30 rounded-full px-4 py-1.5 mb-6">
+              Bath Remodeling Companies
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              14 days free.{" "}
+              <span className="text-emerald-400">No credit card required.</span>
+            </h2>
+            <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
+              Get full access to the same platform we built for a national bath remodeling company —
+              configured for your operation in one onboarding call.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3 text-left max-w-2xl mx-auto mb-10">
+              {includes.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-slate-300">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="mailto:hello@automateitall.ai?subject=14-Day Free Trial — Bath Remodeling"
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-emerald-500 text-white font-bold text-lg hover:bg-emerald-400 transition-colors"
+            >
+              Claim your free trial →
+            </a>
+            <p className="text-xs text-slate-500 mt-4">
+              We&apos;ll reach out within one business day to get you set up.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── CTA ────────────────────────────────────────────────────────────────── */
 function CTA() {
   return (
@@ -272,10 +339,10 @@ function CTA() {
 
         <div className="relative">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Ready to automate
+            Different industry?
             <br />
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              your operation?
+              Let&apos;s talk.
             </span>
           </h2>
           <p className="text-slate-400 text-xl mb-10 max-w-xl mx-auto">
