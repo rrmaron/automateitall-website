@@ -7,6 +7,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <HowItWorks />
+        <Platform />
         <CaseStudy />
         <Industries />
         <FreeTrial />
@@ -80,8 +81,9 @@ function Hero() {
         </h1>
 
         <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          We build fully integrated operations platforms tailored to how your business actually runs —
-          sales, scheduling, inventory, payments, commissions, and customer communication in one place.
+          One platform, built around how your business actually runs: an AI that answers and makes your
+          phone calls, appointment booking and confirmation, customer service, hiring and HR, scheduling,
+          inventory and payments — with your existing systems imported on day one.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -122,7 +124,7 @@ function HowItWorks() {
       number: "03",
       title: "Your team runs faster",
       description:
-        "Leads flow in automatically. Jobs are tracked. Inventory is counted. Commissions are calculated. Installers are scheduled. Nothing falls through the cracks.",
+        "Leads flow in and are called back within a minute. The phone is answered. Appointments are booked and confirmed. Jobs, inventory, pay and commissions are tracked. Nothing falls through the cracks.",
     },
   ];
 
@@ -150,6 +152,128 @@ function HowItWorks() {
   );
 }
 
+/* ─── Platform ───────────────────────────────────────────────────────────── */
+function Platform() {
+  const areas = [
+    {
+      icon: "📞",
+      title: "Inbound calling",
+      lede: "An AI receptionist answers your main line and deals with the call itself.",
+      points: [
+        "Recognises the caller by number and greets them by name",
+        "Books an appointment against real availability and writes it to the calendar",
+        "Logs service and warranty issues and texts a photo-upload link",
+        "Reads back project progress; confirms, moves or cancels appointments",
+        "Takes complaints as urgent and alerts the owners; turns away sales calls",
+        "Live transfer for emergencies — if nobody answers, it says so and takes the details",
+        "Your team can listen in or take over any live call, from any page",
+      ],
+    },
+    {
+      icon: "📲",
+      title: "Outbound calling & texting",
+      lede: "New leads are called and texted within a minute, then followed up on a schedule.",
+      points: [
+        "Speed to lead: an AI setter calls and texts the moment a lead arrives",
+        "A follow-up cadence of calls and texts, inside your calling window",
+        "Confirmation calls within 36 hours of every appointment",
+        "Service-call follow-ups, with redials after voicemail or no answer",
+        "Campaigns: timed text and email sequences; a reply queues a callback that can book",
+        "A shared team inbox for texts, with a record of every consent and opt-out",
+      ],
+    },
+    {
+      icon: "🛠️",
+      title: "Customer service",
+      lede: "Every call, text and email about a customer lands in one thread.",
+      points: [
+        "Service calls from phone and email, with photos, urgency and assignment",
+        "Quotes with built-in e-signing, change orders signed by link, invoices",
+        "Card payment links by text; balances read out only after a texted code",
+        "Printable and online forms, filled and signed by link",
+        "Customer notifications by stage and channel, each one approved before it goes",
+        "Complaints logged as urgent, with the owners notified",
+      ],
+    },
+    {
+      icon: "📅",
+      title: "Appointment booking & confirmation",
+      lede: "One set of booking rules for your office, the AI and your website.",
+      points: [
+        "Assigns the right person, checks conflicts and creates the calendar event",
+        "Each person's hours, time off and slots; a coordinator grid; the install schedule",
+        "Night-before allocation: reps see tomorrow's appointments, nothing further out",
+        "AI confirmation calls; results recorded; closing rate texted daily",
+        "Google Calendar and ServiceMinder sync",
+        "Lead-flow monitoring that flags a drop from any source and can email the rep",
+      ],
+    },
+    {
+      icon: "👥",
+      title: "Employees, hiring & HR",
+      lede: "From job posting to trained, paid employee, with the paperwork done.",
+      points: [
+        "Job postings with an Indeed feed; applications behind an anti-bot check",
+        "DISC assessment, NDA and contract e-signing, study materials and quizzes",
+        "An AI phone interview and a Checkr background check",
+        "Hands-on training on the real screens, each section ending in a quiz",
+        "Employee roster showing missing paperwork, a private document vault, self-service HR",
+        "Installer pay sheets with approvals and advances; commissions on signed contracts",
+      ],
+    },
+    {
+      icon: "🔌",
+      title: "Your existing systems, imported",
+      lede: "History comes with you, so day one isn't a blank screen.",
+      points: [
+        "CompanyCam, One Click Contractor, ServiceMinder, Hatch, ProNexis, Ingage",
+        "Lead emails parsed from Angi, Modernize, HomeBuddy, Yelp, Bark, Google LSA and Facebook",
+        "Google Calendar shared by role; a vendor webhook and a public form for leads",
+        "Inventory with receiving, check-out and a nightly reorder queue",
+        "Presentations in the browser, with your Google reviews pulled in",
+        "Reports: sales stats, profitability, and a call log with recordings and transcripts",
+      ],
+    },
+  ];
+
+  return (
+    <section id="platform" className="py-24 px-6 border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">What the platform does</h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Phone, texts, bookings, service, people and pay in one system. All of it runs today for a
+            national bath remodeling brand; the wording changes with your industry, the machinery doesn&apos;t.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {areas.map((a) => (
+            <div
+              key={a.title}
+              className="p-6 rounded-2xl border border-white/8 bg-white/2 hover:border-cyan-400/30 hover:bg-white/4 transition-all flex flex-col"
+            >
+              <div className="text-3xl mb-4">{a.icon}</div>
+              <h3 className="font-semibold text-lg mb-2">{a.title}</h3>
+              <p className="text-sm text-slate-400 mb-4">{a.lede}</p>
+              <ul className="space-y-2 mt-auto">
+                {a.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-2 text-sm text-slate-300">
+                    <svg className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Case Study ─────────────────────────────────────────────────────────── */
 function CaseStudy() {
   const metrics = [
@@ -160,14 +284,16 @@ function CaseStudy() {
   ];
 
   const features = [
-    "Webhook-driven lead ingestion from CRM",
-    "Automated job creation, assignment & tracking",
-    "Live inventory with reorder alerts",
-    "Installer scheduling & pay sheets",
-    "Commission calculation engine",
-    "Customer-facing quote signing portal",
+    "Leads from Angi, Modernize, Google LSA, Facebook and the website, called back within a minute",
+    "An AI receptionist on the main line: booking, service, progress, complaints",
+    "Automated job creation, assignment & tracking from signed estimates",
+    "Live inventory with a nightly reorder queue",
+    "Installer scheduling, availability & pay sheets",
+    "Commissions on every signed contract",
+    "Quotes signed on the platform, payments by card link",
+    "Hiring, training and HR for every new salesperson",
     "Role-based access for every team member",
-    "Multi-tenant platform — one codebase, many franchises",
+    "One platform, many franchise locations — a master setup applied to each",
   ];
 
   return (
@@ -218,34 +344,34 @@ function CaseStudy() {
 function Industries() {
   const industries = [
     {
-      icon: "🔧",
-      name: "Home Services",
-      examples: "HVAC, plumbing, electrical, remodeling, roofing",
-    },
-    {
       icon: "🏥",
-      name: "Healthcare",
-      examples: "Patient scheduling, billing, provider operations",
+      name: "Medical, dental & clinics",
+      examples: "New-patient booking, reminders and confirmation calls, reschedules, intake forms signed by link, follow-up calls after a visit",
     },
     {
       icon: "🏗️",
-      name: "Construction",
-      examples: "Project tracking, subcontractor management, materials",
+      name: "Construction & remodeling",
+      examples: "Estimates booked on the call, project-progress calls, service and warranty, installer schedules and pay",
     },
     {
-      icon: "🚚",
-      name: "Field Operations",
-      examples: "Dispatch, route optimization, technician pay",
+      icon: "🔧",
+      name: "Home services & trades",
+      examples: "HVAC, plumbing, electrical, roofing: service calls, on-my-way calls and texts, campaigns to open quotes",
     },
     {
       icon: "🏬",
-      name: "Retail & Franchise",
-      examples: "Multi-location ops, inventory, staff management",
+      name: "Franchise & multi-location",
+      examples: "One platform per location, a master phone setup applied to each, a view across all of them",
     },
     {
-      icon: "⚙️",
-      name: "Any Industry",
-      examples: "If your team has a process, we can automate it",
+      icon: "🚚",
+      name: "Field operations",
+      examples: "Who is available when, schedules, time off, pay sheets with approvals",
+    },
+    {
+      icon: "📅",
+      name: "Any appointment business",
+      examples: "Salons, auto shops, cleaners, advisers: the phone answered, appointments booked, confirmed and chased",
     },
   ];
 
@@ -255,8 +381,8 @@ function Industries() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">The pattern is universal</h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            Every industry has leads, jobs, people, inventory, and payments. We automate the
-            connective tissue between all of it.
+            Every industry has a phone that rings, appointments to book and confirm, customers to look
+            after, and people to hire and pay. We automate all of it, in your industry&apos;s own terms.
           </p>
         </div>
 
@@ -281,12 +407,12 @@ function Industries() {
 function FreeTrial() {
   const includes = [
     "Full access to the bath remodeling operations platform",
-    "Webhook-driven lead ingestion from your CRM",
-    "Automated job creation, assignment & tracking",
-    "Live inventory with reorder alerts",
-    "Installer scheduling & pay sheets",
-    "Commission calculation engine",
-    "Customer-facing quote signing portal",
+    "Your inbound line answered by the AI receptionist",
+    "New leads called and texted within a minute",
+    "Appointment booking, confirmation calls and night-before allocation",
+    "Quotes signed on the platform, change orders, payment links",
+    "Live inventory, installer pay sheets and commissions",
+    "Your CompanyCam, ServiceMinder or One Click history imported",
     "Onboarding call with our team",
   ];
 
