@@ -8,6 +8,7 @@ export default function Home() {
         <Hero />
         <HowItWorks />
         <Platform />
+        <Franchisors />
         <CaseStudy />
         <Industries />
         <FreeTrial />
@@ -266,6 +267,66 @@ function Platform() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Franchisors ────────────────────────────────────────────────────────── */
+function Franchisors() {
+  const points = [
+    {
+      title: "Every location on one platform",
+      text: "Each location is its own company: its own people, roles, calendars, inventory, phone line and data. You see all of them from the platform dashboard, and a franchisor\u2019s person can be given access to any set of locations and switch between them.",
+    },
+    {
+      title: "One master setup, applied everywhere",
+      text: "The inbound phone line and its call flow, the master sales presentation, the price list and line-item rules: set once, applied to every location in one click, and kept in step when they change.",
+    },
+    {
+      title: "The sales process, measured, not assumed",
+      text: "Every location runs the same booking rules, the same confirmation calls and the same presentation. In-home appointments are recorded, transcribed and graded against the sales method, and each salesperson\u2019s closing rate is tracked and sent to them daily.",
+    },
+    {
+      title: "Numbers per location, on demand",
+      text: "Sales stats, closing rates, profitability, lead flow by source, the call log with recordings, and balance alerts: available for each location without asking anyone to send a spreadsheet.",
+    },
+    {
+      title: "New locations open ready to sell",
+      text: "A new location is created with its calendars, its copy of the master presentation and its starter inventory. Hiring and training run the same way everywhere: job postings, DISC, e-signing, background checks and hands-on training with quizzes.",
+    },
+    {
+      title: "History moves with them",
+      text: "A location joining from CompanyCam, One Click Contractor, ServiceMinder, Hatch, ProNexis or Ingage brings its jobs, contacts, calls and decks along, so day one is not a blank screen.",
+    },
+  ];
+
+  return (
+    <section id="franchisors" className="py-24 px-6 border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-cyan-400 border border-cyan-400/30 rounded-full px-4 py-1.5 mb-6">
+            For franchisors
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            See every location&apos;s sales.
+            <br />
+            <span className="text-slate-400">Run every location the same way.</span>
+          </h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Built for a bath remodeling franchise with locations across the country, where the franchisor needed
+            the same process, the same numbers and the same phone experience everywhere, without chasing each owner.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {points.map((p) => (
+            <div key={p.title} className="p-6 rounded-2xl border border-white/8 bg-white/2 hover:border-cyan-400/30 hover:bg-white/4 transition-all">
+              <h3 className="font-semibold text-lg mb-2">{p.title}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{p.text}</p>
             </div>
           ))}
         </div>
