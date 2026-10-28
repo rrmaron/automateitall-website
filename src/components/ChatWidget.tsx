@@ -7,7 +7,7 @@ interface Message {
   content: string;
 }
 
-const PHONE = "+14697863052";
+const PHONE = "+13207034271";
 
 function stripLeadBlock(text: string): string {
   return text.replace(/\[LEAD\][\s\S]*?\[\/LEAD\]/g, "").trim();
