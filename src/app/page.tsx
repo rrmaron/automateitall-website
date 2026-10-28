@@ -389,7 +389,7 @@ function CTA() {
               hello@automateitall.ai
             </a>
           </div>
-          <p className="text-xs text-slate-500 mt-4">AI answers 24/7 · Our team replies within one business day</p>
+          <p className="text-xs text-slate-500 mt-4">Available 24/7 · Our team replies within one business day</p>
         </div>
       </div>
     </section>
