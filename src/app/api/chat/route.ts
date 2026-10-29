@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { clientIp, rateLimited } from "@/lib/human";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 
@@ -41,7 +42,13 @@ export async function POST(req: Request) {
     return new Response("GOOGLE_API_KEY is not set", { status: 500 });
   }
 
+  if (rateLimited(`chat:${clientIp(req)}`, 40, 10 * 60 * 1000)) {
+    return new Response("Too many messages from this connection. Please call (320) 703-4271 instead.", { status: 429 });
+  }
   const { messages } = await req.json();
+  if (!Array.isArray(messages) || messages.length > 60 || messages.some((m: { content?: unknown }) => typeof m?.content !== "string" || m.content.length > 4000)) {
+    return new Response("Bad request", { status: 400 });
+  }
 
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash",

@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { leadFromChat, parseLeadBlock, postLead } from "@/lib/evrapps";
+import { clientIp, rateLimited } from "@/lib/human";
 
 interface Message {
   role: "user" | "assistant";
@@ -7,8 +8,12 @@ interface Message {
 }
 
 export async function POST(req: Request) {
+  if (rateLimited(`send-lead:${clientIp(req)}`, 5, 60 * 60 * 1000)) {
+    return Response.json({ error: "Too many submissions from this connection." }, { status: 429 });
+  }
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { messages }: { messages: Message[] } = await req.json();
+  if (!Array.isArray(messages) || messages.length > 60) return Response.json({ error: "Bad request" }, { status: 400 });
 
   const transcript = messages
     .map((m) => `${m.role === "user" ? "Prospect" : "AI"}: ${m.content}`)

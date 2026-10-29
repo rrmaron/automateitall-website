@@ -42,10 +42,10 @@ function Nav() {
             (320) 703-4271
           </a>
           <a
-            href="#contact"
+            href="/demo"
             className="text-sm font-medium px-5 py-2 rounded-full bg-cyan-500 text-[#020817] hover:bg-cyan-400 transition-colors"
           >
-            Get in touch
+            Book a demo
           </a>
         </div>
       </div>
@@ -512,7 +512,7 @@ function FreeTrial() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@automateitall.ai?subject=14-Day Free Trial — Bath Remodeling"
+                href="/demo?trial=1"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-emerald-500 text-white font-bold text-lg hover:bg-emerald-400 transition-colors"
               >
                 Claim your free trial →
@@ -560,6 +560,12 @@ function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/demo"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-[#020817] font-bold text-lg hover:bg-slate-200 transition-colors"
+            >
+              Book a demo
+            </a>
             <a
               href="tel:+13207034271"
               className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-cyan-500 text-[#020817] font-bold text-lg hover:bg-cyan-400 transition-colors"
