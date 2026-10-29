@@ -291,8 +291,8 @@ function Franchisors() {
       text: "Every location runs the same booking rules, the same confirmation calls and the same presentation. In-home appointments are recorded, transcribed and graded against the sales method, and each salesperson\u2019s closing rate is tracked and sent to them daily.",
     },
     {
-      title: "Numbers per location, on demand",
-      text: "Sales stats, closing rates, profitability, lead flow by source, the call log with recordings, and balance alerts: available for each location without asking anyone to send a spreadsheet.",
+      title: "Every location's sales on one page",
+      text: "Appointments, sales, cancellations, close rate and dollars for every location side by side, month to date or any range, with a total; one click opens that location's own report. Plus profitability, lead flow by source, the call log with recordings and balance alerts per location, without asking anyone for a spreadsheet.",
     },
     {
       title: "New locations open ready to sell",
