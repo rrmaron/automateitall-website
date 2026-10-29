@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { leadFromChat, parseLeadBlock, postLead } from "@/lib/evrapps";
 
 interface Message {
   role: "user" | "assistant";
@@ -13,14 +14,20 @@ export async function POST(req: Request) {
     .map((m) => `${m.role === "user" ? "Prospect" : "AI"}: ${m.content}`)
     .join("\n\n");
 
+  // Into the platform first, so the setter can call them back; the email follows either way.
+  const block = [...messages].reverse().find((m) => m.role === "assistant" && parseLeadBlock(m.content));
+  const lead = block ? leadFromChat(parseLeadBlock(block.content)!) : null;
+  const posted = lead ? await postLead(lead) : { posted: false, detail: "no [LEAD] block in the conversation" };
+  const postedLine = posted.posted ? "Posted to the platform as a lead." : `Not posted to the platform: ${posted.detail ?? posted.status}.`;
+
   const { error } = await resend.emails.send({
     from: "AutomateItAll Bot <bot@automateitall.ai>",
     to: "hello@automateitall.ai",
     subject: "New Lead from Website Chat",
-    text: `A prospect submitted their conversation from the website chatbot.\n\n---\n\n${transcript}`,
+    text: `A prospect submitted their conversation from the website chatbot. ${postedLine}\n\n---\n\n${transcript}`,
     html: `
       <h2>New Lead from Website Chat</h2>
-      <p>A prospect submitted their conversation from the website chatbot.</p>
+      <p>A prospect submitted their conversation from the website chatbot. ${postedLine}</p>
       <hr />
       ${messages
         .map(
@@ -36,6 +43,6 @@ export async function POST(req: Request) {
     `,
   });
 
-  if (error) return Response.json({ error }, { status: 500 });
-  return Response.json({ ok: true });
+  if (error) return Response.json({ error, posted: posted.posted }, { status: 500 });
+  return Response.json({ ok: true, posted: posted.posted });
 }
