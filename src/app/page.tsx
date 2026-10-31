@@ -598,7 +598,11 @@ function Footer() {
           <span className="text-white font-medium">automateitall.ai</span> — Business process
           automation for any industry
         </span>
-        <span>© {new Date().getFullYear()} AutomateItAll</span>
+        <span className="flex items-center gap-4">
+          <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
+          <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+          <span>© {new Date().getFullYear()} AutomateItAll</span>
+        </span>
       </div>
     </footer>
   );

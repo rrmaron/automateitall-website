@@ -21,3 +21,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Legal pages (/privacy, /terms): running text on the dark ground */
+.legal p, .legal li { color: #cbd5e1; line-height: 1.7; font-size: 1rem; }
+.legal p + p, .legal ul, .legal table { margin-top: 1rem; }
+.legal h2 { color: #fff; font-size: 1.2rem; font-weight: 700; margin: 2.25rem 0 0.6rem; letter-spacing: -0.01em; }
+.legal ul { padding-left: 1.3rem; list-style: disc; }
+.legal li + li { margin-top: 0.4rem; }
+.legal a { color: #22d3ee; }
+.legal a:hover { color: #67e8f9; }
+.legal strong { color: #fff; font-weight: 600; }
+.legal table { width: 100%; border-collapse: collapse; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem 0.6rem 0; border-top: 1px solid rgba(255,255,255,0.08); color: #cbd5e1; }
+.legal th { color: #fff; font-weight: 600; white-space: nowrap; }
+@media (max-width: 640px) { .legal th { white-space: normal; width: 7rem !important; } }

@@ -47,6 +47,10 @@ export default async function DemoPage({ searchParams }: { searchParams: Promise
       </main>
       <footer className="border-t border-white/5 py-8 px-6 text-sm text-slate-500 text-center">
         We call, text and email you only about your demo. Reply STOP to any text to end them.
+        <span className="mx-3">·</span>
+        <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
+        <span className="mx-3">·</span>
+        <a href="/terms" className="hover:text-white transition-colors">Terms</a>
       </footer>
     </div>
   );
