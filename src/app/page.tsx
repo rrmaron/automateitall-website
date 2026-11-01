@@ -69,7 +69,7 @@ function Hero() {
         </div>
 
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 border border-emerald-400/30 rounded-full px-5 py-2 mb-4 bg-emerald-400/5">
-          🛁 Bath remodeling companies — 14-day free trial, no credit card required
+          14-day free trial, no credit card required: you are in the platform in about a minute
         </div>
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-8">
@@ -89,7 +89,7 @@ function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#free-trial"
+            href="https://evrapps.com/start"
             className="px-8 py-4 rounded-full bg-emerald-500 text-white font-semibold hover:bg-emerald-400 transition-colors text-lg"
           >
             Start free trial →
@@ -192,7 +192,8 @@ function Platform() {
         "Quotes with built-in e-signing, change orders signed by link, invoices",
         "Payments through your own processor — Zift, QuickBooks Payments or Square: pay links with the whole schedule on the invoice, a card page, a terminal, cash, checks and Zelle; receipts sent automatically",
         "Refunds and voids by the people you allow; a one-press refund inside the 3-business-day cancellation period",
-        "Financing from the lenders you choose (Acorn Finance, 360Finance by Modernize, Foundation Finance), offered on the quote and tracked to funded",
+        "A card on file with Square, authorized by the customer in their portal and charged stage by stage",
+        "Financing from the lenders you choose (Acorn Finance, 360Finance by Modernize, Foundation Finance): the customer starts the application inside the quote, and Acorn's status comes back on its own",
         "Balances read out on the phone only after a texted code or the customer's own PIN",
         "Printable and online forms, filled and signed by link",
         "Customer notifications by stage and channel, each one approved before it goes",
@@ -533,10 +534,10 @@ function FreeTrial() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/demo?trial=1"
+                href="https://evrapps.com/start"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-emerald-500 text-white font-bold text-lg hover:bg-emerald-400 transition-colors"
               >
-                Claim your free trial →
+                Start your free trial →
               </a>
               <a
                 href="tel:+13207034271"

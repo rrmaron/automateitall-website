@@ -47,6 +47,7 @@ export default function PrivacyPage() {
         <li>AI text features: Anthropic on the platform; Google on the website&apos;s chat assistant.</li>
         <li>Calendar sync: Google Calendar. Bot protection on web forms: Cloudflare.</li>
         <li>Card processing, whichever the Company chose: Zift, Intuit (QuickBooks Payments) or Square. Electronic signing: DocuSign, where a Company uses it.</li>
+        <li>Financing, whichever lender the Company offers, when a customer chooses to apply: Acorn Finance, Modernize (360Finance) or Foundation Finance. We pass the name, contact details, address and amount the customer confirms. The date of birth, Social Security number and income are entered on the lender&apos;s own page and never reach us.</li>
         <li>Systems a Company connects to bring its own data in or out: CompanyCam, ServiceMinder, One Click Contractor, Hatch, Drop Cowboy, Checkr (background checks).</li>
       </ul>
       <p>A Company connects most of these itself and can disconnect them in its admin pages. Providers change from time to time; we keep this list current. We also share information when the law requires it, to protect people or our rights, and, if the business is sold or merged, with the new owner under this same policy.</p>
