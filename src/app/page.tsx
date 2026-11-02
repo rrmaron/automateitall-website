@@ -250,7 +250,7 @@ function Platform() {
         "Google Calendar shared by role; a vendor webhook and a public form for leads",
         "Inventory with receiving, check-out and a nightly reorder queue",
         "Presentations in the browser, with your Google reviews pulled in",
-        "Reports: sales stats, profitability, and a call log with recordings and transcripts",
+        "Reports: sales stats, profitability, and a comms log with recordings and transcripts",
       ],
     },
   ];
@@ -310,7 +310,7 @@ function Franchisors() {
     },
     {
       title: "Every location's sales on one page",
-      text: "Appointments, sales, cancellations, close rate and dollars for every location side by side, month to date or any range, with a total; one click opens that location's own report. Plus profitability, lead flow by source, the call log with recordings and balance alerts per location, without asking anyone for a spreadsheet.",
+      text: "Appointments, sales, cancellations, close rate and dollars for every location side by side, month to date or any range, with a total; one click opens that location's own report. Plus profitability, lead flow by source, the comms log with recordings and balance alerts per location, without asking anyone for a spreadsheet.",
     },
     {
       title: "New locations open ready to sell",
@@ -373,7 +373,7 @@ function CaseStudy() {
     "A Payments page with collected, outstanding and overdue, and every payment taken",
     "Financing options per company, offered on the quote",
     "A customer portal: status, payments, documents, photos, messages, service requests and self-scheduling",
-    "A call log of every call and every text, in and out",
+    "A comms log of calls, texts and emails, in and out",
     "Hiring, training and HR for every new salesperson",
     "Role-based access for every team member",
     "One platform, many franchise locations — a master setup applied to each",
