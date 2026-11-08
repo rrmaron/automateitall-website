@@ -1,4 +1,5 @@
 import ChatWidget from "@/components/ChatWidget";
+import PromoVideos from "@/components/PromoVideos";
 
 export default function Home() {
   return (
@@ -632,22 +633,6 @@ function Footer() {
 }
 
 function Videos() {
-  const videos = [
-    {
-      src: "/videos/evr-apps-bathroom-remodelers.mp4",
-      poster: "/videos/evr-apps-bathroom-remodelers.jpg",
-      title: "For bathroom remodelers",
-      text: "Follow one customer from the first call to the last warranty visit: lead, appointment, sales visit, measure, inventory, install, her own portal and service.",
-      autoplay: false,
-    },
-    {
-      src: "/videos/evr-apps-any-business.mp4",
-      poster: "/videos/evr-apps-any-business.jpg",
-      title: "For any business",
-      text: "Calls answered day and night, every lead in one list, texts and work phones, scheduling, quotes and payments, your team and your growth.",
-      autoplay: true,
-    },
-  ];
   return (
     <section id="videos" className="py-24 px-6 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
@@ -657,22 +642,7 @@ function Videos() {
             EVR Apps, the Everything app: two short videos of what it does for a business, start to finish.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {videos.map((v) => (
-            <div key={v.src} className="rounded-2xl border border-white/8 bg-white/2 overflow-hidden flex flex-col">
-              {/* the any-business video plays by itself, muted (browsers only allow that), looping; the sound is one click away */}
-              <video className="w-full aspect-video bg-black" controls poster={v.poster} playsInline
-                     preload={v.autoplay ? "auto" : "none"} autoPlay={!!v.autoplay} muted={!!v.autoplay} loop={!!v.autoplay}>
-                <source src={v.src} type="video/mp4" />
-              </video>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{v.title}</h3>
-                <p className="text-slate-400">{v.text}</p>
-                {v.autoplay && <p className="text-xs text-slate-500 mt-2">Playing without sound: press the speaker icon to hear it.</p>}
-              </div>
-            </div>
-          ))}
-        </div>
+        <PromoVideos />
       </div>
     </section>
   );
