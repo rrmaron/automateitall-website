@@ -50,7 +50,7 @@ export async function POST(req: Request) {
   lead.name = name;
   if (phone) lead.phone = phone;
   if (email) lead.email = email;
-  if (fields.trial) lead.comments = "Asked for the 14-day free trial (bath remodeling).";
+  if (fields.trial) lead.comments = "Asked for the 14-day free trial (remodeling).";
 
   let posted: Posted = { ok: false };
   let detail = "";

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AutomateItAll — Automate Any Business Process",
     description:
-      "End-to-end automation platforms for any industry. See how we transformed a national bath remodeling operation — then imagine what we can do for yours.",
+      "End-to-end automation platforms for any industry. See how we transformed a national remodeling operation — then imagine what we can do for yours.",
     url: "https://automateitall.ai",
     siteName: "AutomateItAll",
     type: "website",

@@ -264,7 +264,7 @@ function Platform() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">What the platform does</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Phone, texts, bookings, service, people and pay in one system. All of it runs today for a
-            national bath remodeling brand; the wording changes with your industry, the machinery doesn&apos;t.
+            national remodeling brand; the wording changes with your industry, the machinery doesn&apos;t.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ function Franchisors() {
             <span className="text-slate-400">Run every location the same way.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Built for a bath remodeling franchise with locations across the country, where the franchisor needed
+            Built for a remodeling franchise with locations across the country, where the franchisor needed
             the same process, the same numbers and the same phone experience everywhere, without chasing each owner.
           </p>
         </div>
@@ -395,7 +395,8 @@ function CaseStudy() {
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We built a full operations platform for a national remodeling company — replacing a
-            patchwork of spreadsheets, emails, and manual processes with one integrated system.
+            patchwork of spreadsheets, emails, photo storage, contract pricing software, sales presentations,
+            a call center, communications software and manual processes with one integrated system.
           </p>
         </div>
 
@@ -491,7 +492,7 @@ function Industries() {
 /* ─── Free Trial ─────────────────────────────────────────────────────────── */
 function FreeTrial() {
   const includes = [
-    "Full access to the bath remodeling operations platform",
+    "Full access to the remodeling operations platform",
     "Your inbound line answered by the AI receptionist",
     "New leads called and texted within a minute",
     "Appointment booking, confirmation calls and night-before allocation",
@@ -511,7 +512,7 @@ function FreeTrial() {
 
           <div className="relative">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-400 border border-emerald-400/30 rounded-full px-4 py-1.5 mb-6">
-              Bath Remodeling Companies
+              Remodeling Companies
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -519,7 +520,7 @@ function FreeTrial() {
               <span className="text-emerald-400">No credit card required.</span>
             </h2>
             <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-              Get full access to the same platform we built for a national bath remodeling company —
+              Get full access to the same platform we built for a national remodeling company —
               configured for your operation in one onboarding call.
             </p>
 

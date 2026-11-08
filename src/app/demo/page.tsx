@@ -39,7 +39,7 @@ export default async function DemoPage({ searchParams }: { searchParams: Promise
           </h1>
           <p className="text-slate-400 text-lg mb-10">
             {trial
-              ? "Tell us about your bath remodeling company and pick a time for the onboarding call: thirty minutes by phone or video, and your platform is set up on the call."
+              ? "Tell us about your remodeling company and pick a time for the onboarding call: thirty minutes by phone or video, and your platform is set up on the call."
               : "The same questions our AI asks when you call, in a form. Pick a time at the end and the demo is on our calendar; you get a text and an email with your next steps straight away."}
           </p>
           <DemoForm formStamp={formStamp} turnstileSiteKey={siteKey} trial={trial} />
