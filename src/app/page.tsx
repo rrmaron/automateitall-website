@@ -389,12 +389,12 @@ function CaseStudy() {
             Live proof of concept
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Built for bath remodeling.
+            Built for remodeling.
             <br />
             <span className="text-slate-400">The pattern works everywhere.</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            We built a full operations platform for a national bath remodeling company — replacing a
+            We built a full operations platform for a national remodeling company — replacing a
             patchwork of spreadsheets, emails, and manual processes with one integrated system.
           </p>
         </div>
