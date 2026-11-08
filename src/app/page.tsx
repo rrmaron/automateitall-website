@@ -638,14 +638,14 @@ function Videos() {
       poster: "/videos/evr-apps-bathroom-remodelers.jpg",
       title: "For bathroom remodelers",
       text: "Follow one customer from the first call to the last warranty visit: lead, appointment, sales visit, measure, inventory, install, her own portal and service.",
-      autoplay: true,
+      autoplay: false,
     },
     {
       src: "/videos/evr-apps-any-business.mp4",
       poster: "/videos/evr-apps-any-business.jpg",
       title: "For any business",
       text: "Calls answered day and night, every lead in one list, texts and work phones, scheduling, quotes and payments, your team and your growth.",
-      autoplay: false,
+      autoplay: true,
     },
   ];
   return (
@@ -660,7 +660,7 @@ function Videos() {
         <div className="grid md:grid-cols-2 gap-8">
           {videos.map((v) => (
             <div key={v.src} className="rounded-2xl border border-white/8 bg-white/2 overflow-hidden flex flex-col">
-              {/* the bathroom-remodeler video plays by itself, muted (browsers only allow that), looping; the sound is one click away */}
+              {/* the any-business video plays by itself, muted (browsers only allow that), looping; the sound is one click away */}
               <video className="w-full aspect-video bg-black" controls poster={v.poster} playsInline
                      preload={v.autoplay ? "auto" : "none"} autoPlay={!!v.autoplay} muted={!!v.autoplay} loop={!!v.autoplay}>
                 <source src={v.src} type="video/mp4" />
