@@ -6,6 +6,7 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
+        <Videos />
         <HowItWorks />
         <Platform />
         <Franchisors />
@@ -627,5 +628,47 @@ function Footer() {
         </span>
       </div>
     </footer>
+  );
+}
+
+function Videos() {
+  const videos = [
+    {
+      src: "/videos/evr-apps-bathroom-remodelers.mp4",
+      poster: "/videos/evr-apps-bathroom-remodelers.jpg",
+      title: "For bathroom remodelers",
+      text: "Follow one customer from the first call to the last warranty visit: lead, appointment, sales visit, measure, inventory, install, her own portal and service.",
+    },
+    {
+      src: "/videos/evr-apps-any-business.mp4",
+      poster: "/videos/evr-apps-any-business.jpg",
+      title: "For any business",
+      text: "Calls answered day and night, every lead in one list, texts and work phones, scheduling, quotes and payments, your team and your growth.",
+    },
+  ];
+  return (
+    <section id="videos" className="py-24 px-6 border-t border-white/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">See EVR Apps in action</h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            EVR Apps, the Everything app: two short videos of what it does for a business, start to finish.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {videos.map((v) => (
+            <div key={v.src} className="rounded-2xl border border-white/8 bg-white/2 overflow-hidden flex flex-col">
+              <video className="w-full aspect-video bg-black" controls preload="none" poster={v.poster} playsInline>
+                <source src={v.src} type="video/mp4" />
+              </video>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{v.title}</h3>
+                <p className="text-slate-400">{v.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
